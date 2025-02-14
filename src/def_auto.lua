@@ -1,4 +1,4 @@
----@meta SGG_Modding-ENVY-auto
+---@meta LuaENVY-ENVY-auto
 
 --[[
           Loads a lua file/module relative to *your* plugin.
@@ -9,16 +9,16 @@
     Usage:
         local helper = import("helper.lua")
 --]]
----@see SGG_Modding-ENVY-auto.export to share locals from the file
----@see SGG_Modding-ENVY-auto.import_all like python's `import *`
----@see SGG_Modding-ENVY-auto.import_as_fallback `import_all`, without shallow copy
----@param file SGG_Modding-ENVY*file path relative to plugin, absolute path, file handle, chunk function, or module table
+---@see LuaENVY-ENVY-auto.export to share locals from the file
+---@see LuaENVY-ENVY-auto.import_all like python's `import *`
+---@see LuaENVY-ENVY-auto.import_as_fallback `import_all`, without shallow copy
+---@param file LuaENVY-ENVY*file path relative to plugin, absolute path, file handle, chunk function, or module table
 ---@param fenv table? environment to give the function (not relevant if a module table was given)
 ---@param ... any arguments passed in to the chunk function (if relevant)
 ---@return table data return value from the file/module
 ---@return any ... additional return values from the file/module <br/>
 function import(file,fenv,...) end
----@alias SGG_Modding-ENVY-auto.import ...
+---@alias LuaENVY-ENVY-auto.import ...
 
 --[[
           Uses `import` to get the data from a lua file/module,
@@ -28,13 +28,13 @@ function import(file,fenv,...) end
     Usage:
         import_all("util.lua")
 --]]
----@see SGG_Modding-ENVY-auto.import how it obtains the data from the file/module
----@see SGG_Modding-ENVY-auto.import_as_fallback this, but without shallow copying.
----@param file SGG_Modding-ENVY*file path relative to plugin, absolute path, file handle, chunk function, or module table
+---@see LuaENVY-ENVY-auto.import how it obtains the data from the file/module
+---@see LuaENVY-ENVY-auto.import_as_fallback this, but without shallow copying.
+---@param file LuaENVY-ENVY*file path relative to plugin, absolute path, file handle, chunk function, or module table
 ---@param fenv table? environment to give the function (not relevant if a module table was given)
 ---@param ... any arguments passed in to the chunk function (if relevant) <br/>
 function import_all(file,fenv,...) end
----@alias SGG_Modding-ENVY-auto.import_all ...
+---@alias LuaENVY-ENVY-auto.import_all ...
 
 --[[
           Uses `import` to get the data from a lua file/module,
@@ -45,14 +45,14 @@ function import_all(file,fenv,...) end
     Usage:
         import_all_fallback("shell.lua")
 --]]
----@see SGG_Modding-ENVY-auto.import how it obtains the data from the file/module
----@see SGG_Modding-ENVY-auto.import_all this, but by shallow copying.
----@see SGG_Modding-ENVY-auto.import_as_shared this, but writes fallback as well.
----@param file SGG_Modding-ENVY*file path relative to plugin, absolute path, file handle, chunk function, or module table
+---@see LuaENVY-ENVY-auto.import how it obtains the data from the file/module
+---@see LuaENVY-ENVY-auto.import_all this, but by shallow copying.
+---@see LuaENVY-ENVY-auto.import_as_shared this, but writes fallback as well.
+---@param file LuaENVY-ENVY*file path relative to plugin, absolute path, file handle, chunk function, or module table
 ---@param fenv table? environment to give the function (not relevant if a module table was given)
 ---@param ... any arguments passed in to the chunk function (if relevant) <br/>
 function import_as_fallback(file,fenv,...) end
----@alias SGG_Modding-ENVY-auto.import_as_fallback ...
+---@alias LuaENVY-ENVY-auto.import_as_fallback ...
 
 --[[
           Uses `import` to get *and set* the data from a lua file/module,
@@ -63,14 +63,14 @@ function import_as_fallback(file,fenv,...) end
     Usage:
         import_as_shared("state.lua")
 --]]
----@see SGG_Modding-ENVY-auto.import how it obtains the data from the file/module
----@see SGG_Modding-ENVY-auto.import_all this, but by shallow copying.
----@see SGG_Modding-ENVY-auto.import_as_shared this, but writes don't fallback.
----@param file SGG_Modding-ENVY*file path relative to plugin, absolute path, file handle, chunk function, or module table
+---@see LuaENVY-ENVY-auto.import how it obtains the data from the file/module
+---@see LuaENVY-ENVY-auto.import_all this, but by shallow copying.
+---@see LuaENVY-ENVY-auto.import_as_shared this, but writes don't fallback.
+---@param file LuaENVY-ENVY*file path relative to plugin, absolute path, file handle, chunk function, or module table
 ---@param fenv table? environment to give the function (not relevant if a module table was given)
 ---@param ... any arguments passed in to the chunk function (if relevant) <br/>
 function import_as_shared(file,fenv,...) end
----@alias SGG_Modding-ENVY-auto.import_as_shared*auto ...
+---@alias LuaENVY-ENVY-auto.import_as_shared*auto ...
 
 --[[
           Exports locals by using a function bound to them as upvalues.
@@ -84,12 +84,12 @@ function import_as_shared(file,fenv,...) end
         result.value = 2; print(value) -- 2
         print(result.binder == binder) -- true
 --]]
----@see SGG_Modding-ENVY-auto.import_all to shallow copy into an environment
----@see SGG_Modding-ENVY-auto.import_as_fallback to use the result as a fallback
+---@see LuaENVY-ENVY-auto.import_all to shallow copy into an environment
+---@see LuaENVY-ENVY-auto.import_as_fallback to use the result as a fallback
 ---@param binder function|integer? function to export locals
 ---@return table result table bound to the upvalues <br/>
 function export( binder ) end
----@alias SGG_Modding-ENVY-auto.export ...
+---@alias LuaENVY-ENVY-auto.export ...
 
 -- the original 'public' environment
 public = _ENV

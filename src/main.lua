@@ -488,7 +488,7 @@ end
 
 -- extending itself
 
----@module 'SGG_Modding-ENVY-auto'
+---@module 'LuaENVY-ENVY-auto'
 auto()
 
 for k,v in pairs(exports) do
