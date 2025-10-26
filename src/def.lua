@@ -131,8 +131,8 @@ function envy.import_as_shared(env,file,fenv,level,...) end
 ---@class LuaENVY-ENVY*extras: table
 ---@field public import fun(file: LuaENVY-ENVY*file, fenv: table?,...): table loads a lua file/module relative to *your* plugin.
 ---@field public import_all fun(file: LuaENVY-ENVY*file, fenv: table?,...) uses `import` to get the data from a lua file/module (shallow copied into *your* environment).
----@field public import_as_shared fun(file: LuaENVY-ENVY*file, fenv: table?,...) uses `import` to get the data from a lua file/module (as fallback to *your* environment).
----@field public import_as_fallback fun(file: LuaENVY-ENVY*file, fenv: table?,...) uses `import` to get the data from a lua file/module (as a fallback with linked writes from *your* environment).
+---@field public import_as_shared fun(file: LuaENVY-ENVY*file, fenv: table?,...) uses `import` to get the data from a lua file/module (as a fallback with linked writes from *your* environment).
+---@field public import_as_fallback fun(file: LuaENVY-ENVY*file, fenv: table?,...) uses `import` to get the data from a lua file/module (as fallback to *your* environment). 
 ---@field public export fun(binder: function|integer?): result: table exports locals by using a function bound to them as upvalues.
 ---@field public private table the new 'private' environment
 ---@field public public table the original 'public' environment
